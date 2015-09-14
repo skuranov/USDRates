@@ -7,6 +7,23 @@
     <groupId>com.skuranov</groupId>
     <artifactId>usdrates</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.skuranov.common.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
 
         <!-- MySQL database driver -->
@@ -17,15 +34,24 @@
             <scope>runtime</scope>
         </dependency>
 
-
-
-        <!-- Hibernate framework -->
+      <!-- Hibernate framework -->
         <dependency>
-            <groupId>hibernate</groupId>
-            <artifactId>hibernate3</artifactId>
-            <version>3.2.3.GA</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.3.2.GA</version>
         </dependency>
 
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.12.1.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>1.6.1</version>
+        </dependency>
 
         <!-- Hibernate library dependecy start -->
         <dependency>
